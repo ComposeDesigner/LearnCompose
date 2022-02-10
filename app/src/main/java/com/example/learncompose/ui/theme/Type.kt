@@ -1,28 +1,42 @@
 package com.example.learncompose.ui.theme
 
+import androidx.compose.material.Text
 import androidx.compose.material.Typography
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.learncompose.R
 
-// Set of Material typography styles to start with
+private val opensans_regular = FontFamily(Font(R.font.opensansregular))
+
+private val opensans_medium = FontFamily(Font(R.font.opensansmedium))
+
+private val opensans_semibold = FontFamily(Font(R.font.opensanssemibold))
+
+private val opensans_bold = FontFamily(Font(R.font.opensansbold))
+
 val Typography = Typography(
+
     body1 = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
+        fontFamily = opensans_semibold,
         fontSize = 16.sp
-    )
-    /* Other default text styles to override
-    button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
-        fontSize = 14.sp
     ),
-    caption = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
+
+    h2 = TextStyle(
+        fontFamily = opensans_bold,
+        fontSize = 24.sp
+    ),
+
+    body2 = TextStyle(
+        fontFamily = opensans_regular,
+        fontSize = 10.sp
+    ),
+
+    h1 = TextStyle(
+        fontFamily = opensans_bold,
+        fontSize = 32.sp
     )
-    */
 )
