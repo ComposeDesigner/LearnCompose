@@ -31,12 +31,11 @@ import com.example.learncompose.model.getCourse
 import com.example.learncompose.ui.theme.LearnComposeTheme
 import com.example.learncompose.ui.theme.Purple200
 import com.example.learncompose.ui.theme.Purple500
+import com.example.learncompose.utils.GRADIENT_COLORS
 import com.example.learncompose.utils.drawAfter
 
 
-private val GRADIENT_COLORS = listOf(
-    Purple200, Purple500
-)
+
 
 
 @Preview(
@@ -44,13 +43,19 @@ private val GRADIENT_COLORS = listOf(
     uiMode = UI_MODE_NIGHT_YES
 )
 @Composable
-fun CourseRow(course: Course = getCourse()[0]) {
+fun CourseRow(
+    course: Course = getCourse()[0],
+    onItemClick: (String) -> Unit = {}
+) {
     LearnComposeTheme() {
         Card(modifier = Modifier
             .clickable {
-
+                onItemClick(course.id)
             }) {
-            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(24.dp)) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(24.dp)
+            ) {
                 Image(
                     modifier = Modifier
                         .weight(1f)

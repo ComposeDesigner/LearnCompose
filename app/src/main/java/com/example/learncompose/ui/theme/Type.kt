@@ -30,6 +30,11 @@ val Typography = Typography(
         fontSize = 24.sp
     ),
 
+    h3 = TextStyle(
+        fontFamily = opensans_bold,
+        fontSize = 20.sp
+    ),
+
     body2 = TextStyle(
         fontFamily = opensans_regular,
         fontSize = 10.sp

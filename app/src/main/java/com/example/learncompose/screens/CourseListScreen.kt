@@ -16,6 +16,7 @@ import androidx.navigation.NavHostController
 import com.example.learncompose.components.CourseRow
 import com.example.learncompose.model.Course
 import com.example.learncompose.model.getCourse
+import com.example.learncompose.navigation.CourseScreens
 
 
 @Composable
@@ -29,7 +30,10 @@ fun CourseListScreen(navController: NavHostController) {
         )
         LazyColumn(contentPadding = PaddingValues(24.dp)) {
             items(items = courseList) { item ->
-                CourseRow(item)
+                CourseRow(item) {
+                    course ->
+                    navController.navigate(route = CourseScreens.CourseDetailsScreen.name + "/$course")
+                }
             }
         }
     }
